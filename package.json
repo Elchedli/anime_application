@@ -1,0 +1,28 @@
+{
+    "name": "shotanime",
+    "version": "4.0.6",
+    "author": "Elchedli <Elchedli@users.noreply.github.com>",
+    "description": "Stream anime desktop and application",
+    "homepage": "https://github.com/Elchedli/anime_application",
+    "devDependencies": {
+      "lerna": "^6.1.0",
+      "@commitlint/cli": "^16.0.1",
+      "@commitlint/config-conventional": "^16.0.0",
+      "husky": "^7.0.4"
+    },
+    "engines": {
+      "node": "=16"
+    },
+    "scripts": {
+      "prepare": "husky install",
+      "clean": "lerna clean",
+      "bootstrap": "lerna bootstrap",
+      "setup": "lerna clean -y && rm -rf node_modules/ && yarn && lerna bootstrap",
+      "test": "lerna run test --stream",
+      "test:web": "lerna run test --scope=shotanime-web --stream",
+      "build": "lerna run build --stream",
+      "start:web": "lerna run dev --scope=shotanime-web --stream",
+      "start:desktop": "lerna run start --scope=shotanime-desktop --stream"
+    }
+  }
+  
